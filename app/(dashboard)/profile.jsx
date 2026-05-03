@@ -1,14 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Link } from 'expo-router'
+import { StyleSheet } from 'react-native'
+
+// Themed Components
+import ThemedView from '../../components/ThemedView'
+import ThemedText from '../../components/ThemedText'
+import ThemedLink from '../../components/ThemedLink'
 
 const Profile = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
 
-      <Link href="/">Home</Link>
-    </View>
+  return (
+    <ThemedView style={styles.container} safe={true}>
+      <ThemedText style={styles.title} textPrimary={true}>Profile</ThemedText>
+
+      <ThemedLink href="/">Home</ThemedLink>
+    </ThemedView>
   )
 }
 
@@ -23,6 +27,7 @@ const styles = StyleSheet.create({
     title: {
         fontWeight: 'bold',
         fontSize: 18,
+        marginBottom: 30
     },
     card: {
         backgroundColor: '#eee',
